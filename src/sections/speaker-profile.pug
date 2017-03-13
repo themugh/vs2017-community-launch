@@ -1,0 +1,19 @@
+#speaker-profiles.container-fluid
+    each speaker in SpeakersList
+        div(id=speaker.id, class='row speaker-profile')
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12
+                .col1
+                    img.avatar(alt=speaker.name, src=speaker.photo)
+                .col2
+                    p.name
+                        | #{speaker.name}
+                    p.role
+                        | #{speaker.role} at #{speaker.company}
+                    p.profile !{speaker.profile}
+                    p.social
+                      if speaker.twitter!=""
+                        a.twitter(href='http://twitter.com/'+speaker.twitter target='_blank') #{speaker.twitter}
+                      if speaker.twitter!="" && speaker.blog!=""
+                        |, 
+                      if speaker.blog!=""
+                        a(href='http://'+speaker.blog, target='_blank') #{speaker.blog}

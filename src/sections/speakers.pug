@@ -1,0 +1,21 @@
+section(id='speakers', class='container-fluid')
+    .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .container
+                .row
+                    div.col-xs-12.col-sm-12.col-md-12.col-lg-12(style='padding:0px')
+                        h3.title
+                            | Speakers
+                        div.content
+                            ul.speakers-list
+                                each speaker in SpeakersList
+                                    li.speaker
+                                        a(href='speakers.html#' + speaker.id, target='_self')
+                                            .avatar
+                                                img(alt=speaker.name, src=speaker.photo)
+                                            p.name
+                                                | #{speaker.name}
+                                            p.role
+                                                | #{speaker.role}
+                                            p.company
+                                                | #{speaker.company}
