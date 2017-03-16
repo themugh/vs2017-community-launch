@@ -8,7 +8,9 @@
                     p.name
                         | #{speaker.name}
                     p.role
-                        | #{speaker.role} at #{speaker.company}
+                        | #{speaker.role}
+                        if speaker.company != ""
+                            |&#32;at #{speaker.company}
                     p.profile !{speaker.profile}
                     p.social
                       if speaker.twitter!=""
